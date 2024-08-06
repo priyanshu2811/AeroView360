@@ -1,0 +1,60 @@
+<!doctype html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>TAMS</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <style>
+      /* Inline CSS to style the heading */
+      .heading {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #030303;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        z-index: 1000; /* Ensure it appears above other elements */
+      }
+
+      /* Ensure the map takes full viewport height */
+      .map {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+    </style>
+    <script type="module" src="./index.ts"></script>
+  </head>
+  <body>
+    <!-- Heading added here -->
+    <div class="heading">This is a Sample Demo of Project which was made for company.
+      <br>
+      <br>
+      This only conatians a basic functionalities without live data integration.
+
+    </div>
+    
+    <div id="map" class="map"></div>
+
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises.
+      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>
